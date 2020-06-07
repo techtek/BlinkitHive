@@ -10,6 +10,9 @@ cls
 	
 	:: Get the Hive username from hiveusername.txt 
 	set /p hiveusername=<%~dp0\hiveusername.txt
+
+	:: Get the Hive node from hivenode.txt 
+	set /p hivenode=<%~dp0\hivenode.txt
     
 	:: Hive API request JSON
     set jsonbody='{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_blog\", \"params\":[\"%hiveusername%\",0,2], \"id\":1}' 
@@ -51,6 +54,10 @@ cls
 :: Let the user know the led is going to be blinked, on the %flashdrive% letter by displaying the text:  	  
 	echo %Grey%Your USB Flash Drive: %flashdrive%
 	echo.
+	
+:: Let the user know the led is going to be blinked, on the %flashdrive% letter by displaying the text:  	  
+	echo %Grey%Hive Node %hivenode%
+	echo.	
 
 :: Blink the LED, by copying the LED file from the Blinkit folder to the flashdrive
 	echo %Grey%Testing LED Blink... 
@@ -71,13 +78,13 @@ cls
 :: Blinkit postvotes Script 
 
 :: Download postvotes data from Hive API and save it into a txt file
-	 powershell Invoke-RestMethod -ContentType 'application/json' -Method Post -Uri https://api.hive.blog -Body %jsonbody% -UserAgent "curl" -OutFile  %~dp0\data\downloadedpostvotes.txt"
+	 powershell Invoke-RestMethod -ContentType 'application/json' -Method Post -Uri %hivenode% -Body %jsonbody% -UserAgent "curl" -OutFile  %~dp0\data\downloadedpostvotes.txt"
 	PING localhost -n 4 >NUL
 	
 
 :main   
 :: Download postvotes data from Hive API and save it into a txt file
-	 powershell Invoke-RestMethod -ContentType 'application/json' -Method Post -Uri https://api.hive.blog -Body %jsonbody% -UserAgent "curl" -OutFile  %~dp0\data\downloadedpostvotes2.txt"
+	 powershell Invoke-RestMethod -ContentType 'application/json' -Method Post -Uri %hivenode% -Body %jsonbody% -UserAgent "curl" -OutFile  %~dp0\data\downloadedpostvotes2.txt"
 	 PING localhost -n 4 >NUL
 
     	
@@ -95,7 +102,7 @@ cls
 
 	
 :: Download postvotes data from Hive API and save it into a txt file
-	 powershell Invoke-RestMethod -ContentType 'application/json' -Method Post -Uri https://api.hive.blog -Body %jsonbody% -UserAgent "curl" -OutFile  %~dp0\data\downloadedpostvotes2.txt"
+	 powershell Invoke-RestMethod -ContentType 'application/json' -Method Post -Uri %hivenode% -Body %jsonbody% -UserAgent "curl" -OutFile  %~dp0\data\downloadedpostvotes2.txt"
 	
 
 	 :: 8 seconds silent delay (works by pinging local host)
@@ -132,7 +139,7 @@ cls
 
 
 :: Download postvotes data from Hive API and save it into a txt file
-	 powershell Invoke-RestMethod -ContentType 'application/json' -Method Post -Uri https://api.hive.blog -Body %jsonbody% -UserAgent "curl" -OutFile  %~dp0\data\downloadedpostvotes.txt"
+	 powershell Invoke-RestMethod -ContentType 'application/json' -Method Post -Uri %hivenode% -Body %jsonbody% -UserAgent "curl" -OutFile  %~dp0\data\downloadedpostvotes.txt"
 	
 	 PING localhost -n 5 >NUL
 

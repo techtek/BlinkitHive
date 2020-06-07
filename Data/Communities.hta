@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Blinkit</title>
+
+
+<style>
+body {
+ 
+  background-color: #565455;
+}
+
+h1 {
+  font-family: Roboto;
+  color: white;
+  text-align: left;
+}
+
+p {
+  font-family: Roboto;
+  font-size: 16px;
+  color: white;
+}
+
+
+b {
+  font-family: Roboto;
+  font-size: 18px;
+  color: white;
+  clear: both;  
+}
+
+tr {
+  font-family: Roboto;
+  font-size: 16px;
+  color: white;
+}
+
+td {
+  font-family: Roboto;
+  font-size: 16px;
+  color: white;
+}
+
+
+/* unvisited link */
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  color: white;
+}
+
+/* selected link */
+a:active {
+  color: white;
+}
+
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   color: white;
+   text-align: center;
+}
+
+.header {
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+}
+
+.Button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+h2{
+    display: inline;
+	font-size: 12px;
+	color: white;
+}
+
+h6{
+    display: inline;
+	font-size: 13px;
+	color: grey;
+	opacity: 0.5;
+}
+
+
+
+html {
+overflow-x: hidden;
+overflow-y:scroll;
+scrollbar-face-color: #736f71;
+scrollbar-shadow-color: #565455;
+scrollbar-highlight-color: #565455;
+scrollbar-3dlight-color: #565455;
+scrollbar-darkshadow-color: #00FFFF;
+scrollbar-track-color: #565455;
+scrollbar-arrow-color: #ffffff;}
+
+}
+
+
+
+
+
+
+</style>
+
+
+
+   <HTA:APPLICATION
+       ID="Blinkit"
+       APPLICATIONNAME="Blinkit"
+       ICON="favicon.ico"
+	   navigable="yes"
+	   BORDER="DIALOG"
+	   MAXIMIZEBUTTON="NO"
+       SCROLL="yes"
+	   SYSMENU="yes"
+    
+	   
+	   
+	   >
+
+
+	   
+
+	   
+	   
+	   
+<script>
+  window.resizeTo(480, 800);
+</script>
+
+
+
+</head>
+
+
+
+
+
+
+
+<body SCROLL="yes">
+
+<br></br>
+
+<div class="header">
+<center><img src=".\Images\logoheader.png" alt="header image" height="100px" width="auto"></center>
+</div>
+
+<br></br>
+<br></br>
+
+
+
+<b>Communities</b><br><h6>Choose one of the Communities to Blink on:</h6>
+<br></br>
+
+<center><FORM>
+	<input type="image" src=".\Images\splinterlands.png" NAME="splinterlands" VALUE="EDIT" alt="Splinterlands" width="410px" height="auto" >
+      <SCRIPT FOR="splinterlands" EVENT="onClick" LANGUAGE="VBScript">
+		Set objShell = CreateObject("Shell.Application")
+		objShell.ShellExecute ".\Data\Hive\HiveSplinterlandsPostsVotes.bat"
+      </SCRIPT>
+    </FORM></center>
+
+<center><FORM>
+	<input type="image" src=".\Images\gems.png" NAME="gems" VALUE="EDIT" alt="GEMS" width="410px" height="auto" >
+      <SCRIPT FOR="gems" EVENT="onClick" LANGUAGE="VBScript">
+		Set objShell = CreateObject("Shell.Application")
+		objShell.ShellExecute ".\Data\Hive\HiveGEMSPostsVotes.bat"
+      </SCRIPT>
+    </FORM></center>
+
+<center><FORM>
+	<input type="image" src=".\Images\ocd.png" NAME="ocd" VALUE="EDIT" alt="OCD" width="410px" height="auto" >
+      <SCRIPT FOR="ocd" EVENT="onClick" LANGUAGE="VBScript">
+		Set objShell = CreateObject("Shell.Application")
+		objShell.ShellExecute ".\Data\Hive\HiveOCDPostsVotes.bat"
+      </SCRIPT>
+    </FORM></center>
+
+<center><FORM>
+	<input type="image" src=".\Images\actifit.png" NAME="actifit" VALUE="EDIT" alt="Actifit" width="410px" height="auto" >
+      <SCRIPT FOR="actifit" EVENT="onClick" LANGUAGE="VBScript">
+		Set objShell = CreateObject("Shell.Application")
+		objShell.ShellExecute ".\Data\Hive\HiveActifitPostsVotes.bat"
+      </SCRIPT>
+    </FORM></center>
+
+<center><FORM>
+	<input type="image" src=".\Images\stemgeeks.png" NAME="stemgeeks" VALUE="EDIT" alt="Stemgeeks" width="410px" height="auto" >
+      <SCRIPT FOR="stemgeeks" EVENT="onClick" LANGUAGE="VBScript">
+		Set objShell = CreateObject("Shell.Application")
+		objShell.ShellExecute ".\Data\Hive\HiveSTEMgeeksPostsVotes.bat"
+      </SCRIPT>
+    </FORM></center>
+
+<center><FORM>
+	<input type="image" src=".\Images\alienarthive.png" NAME="alienarthive" VALUE="EDIT" alt="Alien art hive" width="410px" height="auto" >
+      <SCRIPT FOR="alienarthive" EVENT="onClick" LANGUAGE="VBScript">
+		Set objShell = CreateObject("Shell.Application")
+		objShell.ShellExecute ".\Data\Hive\HiveAlienarthivePostsVotes.bat"
+      </SCRIPT>
+    </FORM></center>
+
+
+<br></br>
+<a href=".\Blinkit.hta">
+<img border="0" alt="Back" src="https://i.imgur.com/3rzSOti.png" width="410px" height="auto">
+<br></br>
+
+
+</body>
+
+
+<div class="footer">
+<center>
+</center>
+</div>
+
+
+
+</html>
