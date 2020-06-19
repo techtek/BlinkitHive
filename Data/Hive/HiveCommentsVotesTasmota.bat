@@ -122,7 +122,7 @@ cls
 	
 
 :: Blink the Tasmota device
-    START /MIN CMD.EXE /C TestBlinkTasmota.bat
+    START /MIN CMD.EXE /C %~dp0\TestBlinkTasmota.bat  goto sound
 	
 	
 :sound	
