@@ -1,18 +1,1 @@
 https://hive.roelandp.nl
-
-
-
---------------------------------------------------------------------
-The above Node is used to connect Blinkit to the Hive Blockchain
-You can change it to one from the below listed nodes,
-or add in aditional nodes that are not listed below
---------------------------------------------------------------------
-
-https://api.hive.blog
-https://api.pharesim.me
-https://rpc.ausbit.dev
-http://anyx.io
-https://api.hivekings.com
-https://techcoderx.com
-https://api.openhive.network
-https://rpc.esteem.app
