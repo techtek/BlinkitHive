@@ -125,7 +125,7 @@ cls
     	
 	set loop1=0
 	:loop1
-	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > $null
+	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > nul
 	set /a loop1=%loop1%+1 
 	if "%loop1%"=="%blinklength%" goto sound
 	goto loop1
