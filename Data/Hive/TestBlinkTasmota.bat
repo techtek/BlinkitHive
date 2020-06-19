@@ -16,5 +16,10 @@ cls
 	:loop1
 	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > nul
 	set /a loop1=%loop1%+1 
-	if "%loop1%"=="%blinklength%" goto menu
+	if "%loop1%"=="%blinklength%" goto exit
 	goto loop1
+	
+	
+:exit
+
+exit

@@ -107,16 +107,11 @@
 	echo Blinkit %White%New follower for %Red%Hive %White%user %hiveusername% detected, %Green%Light blink! %White% 
 	
 
-:: Let the user know, there is a new Follower, and blink the Tasmota device
-    	
-	set loop1=0
-	:loop1
-	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > nul
-	set /a loop1=%loop1%+1 
-	if "%loop1%"=="%blinklength%" goto sound
-	goto loop1
+:: Blink the Tasmota device
+    START /MIN CMD.EXE /C TestBlinkTasmota.bat
 	
-	:sound
+	
+:sound	
 	
 :: Play windows notification sound
     powershell -c echo `a 	
