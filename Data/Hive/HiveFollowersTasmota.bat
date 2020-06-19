@@ -46,10 +46,10 @@
 	echo %Grey%Your Tasmota device IP: %ip%
 	echo.
 
-::: Blink the light, by requesting the Tasmota toggle url
+:: Blink the light, by requesting the Tasmota toggle url
 	echo %Grey%Testing Tasmota Device Blink... 
-	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > nul
-	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > nul
+	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > $null
+	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > $null
 	echo.
 	
 :: Let the user know a sound is being played by displaying the text:
@@ -111,7 +111,7 @@
     	
 	set loop1=0
 	:loop1
-	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > nul
+	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > $null
 	set /a loop1=%loop1%+1 
 	if "%loop1%"=="%blinklength%" goto sound
 	goto loop1

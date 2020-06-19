@@ -58,10 +58,10 @@ cls
 	echo %Grey%Hive Node %hivenode%
 	echo.	
 
-:: Blink the LED, by copying the LED file from the Blinkit folder to the flashdrive
-	echo %Grey%Testing light Blink... 
-	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > nul
-	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > nul
+:: Blink the light, by requesting the Tasmota toggle url
+	echo %Grey%Testing Tasmota Device Blink... 
+	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > $null
+	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > $null
 	echo.
 	
 :: Let the user know a sound is being played by displaying the text:
@@ -124,7 +124,7 @@ cls
     	
 	set loop1=0
 	:loop1
-	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > nul
+	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > $null
 	set /a loop1=%loop1%+1 
 	if "%loop1%"=="%blinklength%" goto sound
 	goto loop1
