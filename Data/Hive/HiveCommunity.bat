@@ -6,18 +6,17 @@ cls
 	set /p flashdrive=<%~dp0\yourusbdrive.txt
 	
 	:: Get the Blink length set by the user in yourblinklength.txt 
-	set /p blinklength=<%~dp0\yourblinklength.txt
+	set /p blinklength=<%~dp0\yourblinklengthtasmota.txt
 	
 	:: Get the Hive node from hivenode.txt 
 	set /p hivenode=<%~dp0\hivenode.txt
-	
-		:: Get the Hive node from hivenode.txt 
-	set /p hivecommunity=<%~dp0\hivecommunity.txt
     
+			:: Get the Hive node from hivenode.txt 
+	set /p hivecommunity=<%~dp0\hivecommunity.txt
+	
 	:: Hive API request JSON
-    set jsonbody='{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_discussions_by_created\", \"params\":[{\"tag\":\"%hivecommunity%\",\"limit\":1}], \"id\":1}'
-
-	 
+    set jsonbody='{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_discussions_by_created\", \"params\":[{\"tag\":\"%hivecommunity%\",\"limit\":1}], \"id\":1}' 
+	
 	
 	              
 	
@@ -51,7 +50,7 @@ cls
 	echo %Grey%Blink on new %hivecommunity% community posts and votes  %Grey%(limit is latest post)
 	echo.
 	  
-:: Let the user know the led is going to be blinked, on the %flashdrive% letter by displaying the text:  	  
+:: Let the user know the USB drive letter  	  
 	echo %Grey%Your USB Flash Drive: %flashdrive%
 	echo.
 	
@@ -72,10 +71,10 @@ cls
 
 :: Display the saved Username and Flash drive letter and let the user know that the program is starting to look for new postvotes
 	echo.
-	echo %White%Blinkit is now connecting your USB flash drive to the %Red%Hive%White% Blockchain...	  
+	echo %White%Blinkit is now connecting your Tasmota device to the %Red%Hive%White% Blockchain...	  
 	echo.
 	
-:: Blinkit postvotes Script 
+:: Blinkit Script 
 
 :: Download postvotes data from Hive API and save it into a txt file
 	 powershell Invoke-RestMethod -ContentType 'application/json' -Method Post -Uri %hivenode% -Body %jsonbody% -UserAgent "curl" -OutFile  %~dp0\data\downloadedpostvotes.txt"
@@ -112,6 +111,7 @@ cls
 
 	
     
+    
 :notification
 
 :: Let the user know, there is community activity (new post or votes/comments on it)  
@@ -127,10 +127,9 @@ cls
 	set /a loop=%loop%+1 
 	if "%loop%"=="%blinklength%" goto sound
 	goto loop
-
-	:sound
 	
 	
+:sound	
 	
 	
 :: Play windows notification sound

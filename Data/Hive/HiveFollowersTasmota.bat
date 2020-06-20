@@ -48,8 +48,8 @@
 
 :: Blink the light, by requesting the Tasmota toggle url
 	echo %Grey%Testing Tasmota Device Blink... 
-	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > $null
-	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > $null
+	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" >NUL
+	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" >NUL
 	echo.
 	
 :: Let the user know a sound is being played by displaying the text:

@@ -7,17 +7,17 @@ cls
 	
 	:: Get the Blink length set by the user in yourblinklength.txt 
 	set /p blinklength=<%~dp0\yourblinklengthtasmota.txt
-		
-	:: Get the Hive username from hiveusername.txt 
-	set /p hiveusername=<%~dp0\hiveusername.txt
-
+	
 	:: Get the Hive node from hivenode.txt 
 	set /p hivenode=<%~dp0\hivenode.txt
-    
+	
+		:: Get the hive username from hiveusername.txt 
+	set /p hiveusername=<%~dp0\hiveusername.txt
+   	
 	:: Hive API request JSON
-    set jsonbody='{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_blog\", \"params\":[\"%hiveusername%\",0,2], \"id\":1}' 
+    set jsonbody='{\"jsonrpc\":\"2.0\", \"method\":\"condenser_api.get_blog\", \"params\":[\"%hiveusername%\",0,2], \"id\":1}' 	
 	
-	
+	              
 	
 	:: Colour settings
 	set ESC=
@@ -45,25 +45,22 @@ cls
 	type %~dp0\data\welcome.txt
 
 	
-:: Let the user know that Blinkit is going to watch for Upvotes by displaying the text:
-	echo %Red%Hive %Grey%account comments and votes %Grey%(limit is latest 2 blog posts)
+:: Let the user know that Blinkit is going to watch for new activities
+	echo %Grey%Blink on new commments, posts, and votes  %Grey%(limit is latest post)
 	echo.
-	echo %Grey%Hive username: %Hiveusername%
-    echo.
 	  
 :: Let the user know the Tasmota device ip that is set 	  
 	echo %Grey%Your Tasmota device IP: %ip%
 	echo.
-
 	
-:: Let the user know the hive node  	  
-	echo %Grey%Hive Node %hivenode%
+:: Let the user know the hive node 	  
+	echo %Grey%Hive Node: %hivenode%
 	echo.	
 
 :: Blink the light, by requesting the Tasmota toggle url
 	echo %Grey%Testing Tasmota Device Blink... 
-	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > $null
-	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" > $null
+	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" >NUL
+	powershell.exe -noprofile -command "Invoke-WebRequest -Uri %ip%" >NUL
 	echo.
 	
 :: Let the user know a sound is being played by displaying the text:
@@ -72,7 +69,7 @@ cls
 :: Play and test windows notification sound	
 	powershell -c echo `a	
 
-:: let the user know that the program is starting to look for new postvotes
+:: let the user know blinkit is connecting 
 	echo.
 	echo %White%Blinkit is now connecting your Tasmota device to the %Red%Hive%White% Blockchain...	  
 	echo.
@@ -114,11 +111,12 @@ cls
 
 	
     
+    
 :notification
 
-:: Let the user know, there is a new comment/votes by displaying the text:   
+:: Let the user know, there is community activity (new post or votes/comments on it)  
 	echo.
-	echo %White%Blinkit new comment/vote for %Red%Hive %White%user %hiveusername% detected, %Green%Light blink! %White% 
+	echo %White%Blinkit new activity for %hiveusername% detected, %Green%Light blink! %White% 
 	
 
 :: Blink the Tasmota device
@@ -126,6 +124,7 @@ cls
 	
 	
 :sound	
+	
 	
 :: Play windows notification sound
     powershell -c echo `a 	

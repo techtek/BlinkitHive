@@ -2,7 +2,7 @@
 cls    
 :set   
 	
-	:: Get the Hive username from hiveusername.txt 
+	:: Get the device ip hiveusername.txt 
 	set /p ip=<%~dp0\yourtasmotaip.txt
 	
 	:: Get the Blink length set by the user in yourblinklength.txt 
