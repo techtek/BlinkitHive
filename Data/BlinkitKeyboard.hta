@@ -215,26 +215,6 @@ select option {
 
 
 
-<script language="javascript">
-function Writedata()
-{
-var fso = new ActiveXObject("Scripting.FileSystemObject");
-var write_id;
-write_id = 'yourtasmotacommand.txt' 
-
-alert('The data has been written to \n' + write_id);
-var s = fso.CreateTextFile(write_id, true);
-
-s.WriteLine(document.getElementById('name_id').value);
-
-s.Close();
-}
-</script>
-
-
-
-
-
 
 
 </head>
@@ -248,10 +228,10 @@ s.Close();
 <body SCROLL="no">
 
 
-<a href="Devices.hta">
-<img border="0" align="right" alt="Choose a other device" src=".\Images\tasmota.png" width="66px" height="auto">
-</a>
 
+<a href="Devices.hta">
+<img border="0" align="right" alt="Choose a other device" src=".\Images\keyboard.png" width="66px" height="auto">
+</a>  
 
 
 <br></br>
@@ -260,7 +240,7 @@ s.Close();
 <center><img src=".\Images\logoheader.png" alt="" height="120px" width="auto"></center>
 </div>
 <br></br>
-<center><h6>V3.4 - For Tasmota Smart Home Devices</h6></center>
+<center><h6>V3.4 - For Keyboard lights: Caps, Scroll & Numlock</h6></center>
 <br></br>
 
 <b>Function</b>
@@ -270,7 +250,7 @@ s.Close();
 	<input type="image" src=".\Images\start.png" NAME="Buttonvotesandposts" VALUE="EDIT" alt="Submit" width="auto" height="23" >
       <SCRIPT FOR="Buttonvotesandposts" EVENT="onClick" LANGUAGE="VBScript">
 		Set objShell = CreateObject("Shell.Application")
-		objShell.ShellExecute ".\Data\Hive\HiveCommentsVotesTasmota.bat"
+		objShell.ShellExecute ".\Data\Hive\HiveCommentsVotesKeyboard.bat"
       </SCRIPT>
     </FORM> </div>
 
@@ -282,7 +262,7 @@ s.Close();
 	<input type="image" src=".\Images\start.png" NAME="Buttonfollowers" VALUE="EDIT" alt="Submit" width="auto" height="23" >
       <SCRIPT FOR="Buttonfollowers" EVENT="onClick" LANGUAGE="VBScript">
 		Set objShell = CreateObject("Shell.Application")
-		objShell.ShellExecute ".\Data\Hive\HiveFollowersTasmota.bat"
+		objShell.ShellExecute ".\Data\Hive\HiveFollowersKeyboard.bat"
       </SCRIPT>
     </FORM> </div>	
 	
@@ -294,7 +274,7 @@ s.Close();
 	<input type="image" src=".\Images\start.png" NAME="Buttoncommunity" VALUE="EDIT" alt="Submit" width="auto" height="23" >
       <SCRIPT FOR="Buttoncommunity" EVENT="onClick" LANGUAGE="VBScript">
 		Set objShell = CreateObject("Shell.Application")
-		objShell.ShellExecute ".\Data\Hive\HiveCommunityTasmota.bat"
+		objShell.ShellExecute ".\Data\Hive\HiveCommunityKeyboard.bat"
       </SCRIPT>
     </FORM> </div>			
 
@@ -309,35 +289,29 @@ s.Close();
 <thead>
   <tr>
     <th><FORM>
-	  <input type="image" src=".\Images\hiveusername.png" NAME="Buttonusername" VALUE="EDIT" alt="Change the Hive username" style="opacity:0.4;filter:alpha(opacity=30) width="auto" height="54" >
+	  <input type="image" src=".\Images\hiveusername.png" NAME="Buttonusername" VALUE="EDIT" alt="Change the Hive username" style="opacity:0.4;filter:alpha(opacity=30) width="auto" height="68" >
       <SCRIPT FOR="Buttonusername" EVENT="onClick" LANGUAGE="VBScript">
 		Set objShell = CreateObject("Shell.Application")
 		objShell.ShellExecute "notepad.exe", ".\Data\Hive\hiveusername.txt"
       </SCRIPT>
     </FORM></th>
+    <th></th>
     <th><FORM>
-	  <input type="image" src=".\Images\deviceip.png" NAME="deviceip" VALUE="EDIT" alt="Change the Tasmota device IP" style="opacity:0.4;filter:alpha(opacity=30) width="auto" height="54" >
-      <SCRIPT FOR="deviceip" EVENT="onClick" LANGUAGE="VBScript">
-		Set objShell = CreateObject("Shell.Application")
-		objShell.ShellExecute "notepad.exe", ".\Data\Hive\yourtasmotaip.txt"
-      </SCRIPT>
-    </FORM></th>
-    <th><FORM>
-	  <input type="image" src=".\Images\lightblinklength.png" NAME="Buttonlength" VALUE="EDIT" alt="Change light blink length" style="opacity:0.4;filter:alpha(opacity=30) width="auto" height="54" >
+	  <input type="image" src=".\Images\lightblinklength.png" NAME="Buttonlength" VALUE="EDIT" alt="Change light blink length" style="opacity:0.4;filter:alpha(opacity=30) width="auto" height="68" >
       <SCRIPT FOR="Buttonlength" EVENT="onClick" LANGUAGE="VBScript">
 		Set objShell = CreateObject("Shell.Application")
-		objShell.ShellExecute "notepad.exe", ".\Data\Hive\yourblinklengthtasmota.txt"
+		objShell.ShellExecute "notepad.exe", ".\Data\Hive\yourblinklengthkeyboard.txt"
       </SCRIPT>
     </FORM></th>
 	    <th><FORM>
-	  <input type="image" src=".\Images\hivenode.png" NAME="Hivenode" VALUE="EDIT" alt="Change Hive node" style="opacity:0.4;filter:alpha(opacity=30) width="auto" height="54" >
+	  <input type="image" src=".\Images\hivenode.png" NAME="Hivenode" VALUE="EDIT" alt="Change Hive node" style="opacity:0.4;filter:alpha(opacity=30) width="auto" height="68" >
       <SCRIPT FOR="Hivenode" EVENT="onClick" LANGUAGE="VBScript">
 		Set objShell = CreateObject("Shell.Application")
 		objShell.ShellExecute "notepad.exe", ".\Data\Hive\hivenode.txt"
       </SCRIPT>
     </FORM></th>
 	<th><FORM>
-	  <input type="image" src=".\Images\community.png" NAME="community" VALUE="EDIT" alt="Change Hive community" style="opacity:0.4;filter:alpha(opacity=30) width="auto" height="54" >
+	  <input type="image" src=".\Images\community.png" NAME="community" VALUE="EDIT" alt="Change Hive community" style="opacity:0.4;filter:alpha(opacity=30) width="auto" height="68" >
       <SCRIPT FOR="community" EVENT="onClick" LANGUAGE="VBScript">
 		Set objShell = CreateObject("Shell.Application")
 		objShell.ShellExecute "notepad.exe", ".\Data\Hive\hivecommunity.txt"
@@ -368,21 +342,6 @@ s.Close();
 
 
 
-</center>
-
-
-
-
-	
-<br></br>	
-<br></br>	
-
-
-
-
-
-
-
 
 
 
@@ -399,7 +358,7 @@ s.Close();
 	  <input type="image" src="https://i.imgur.com/mgf2u3I.png" NAME="Buttonblinkit" VALUE="EDIT" alt="Submit" width="430px" height="auto" >
       <SCRIPT FOR="Buttonblinkit" EVENT="onClick" LANGUAGE="VBScript">
 		Set objShell = CreateObject("Shell.Application")
-		objShell.ShellExecute ".\Data\Hive\TestBlinkTasmota.bat", "", "", "", 7
+		objShell.ShellExecute ".\Data\Hive\TestBlinkKeyboard.vbs", "", "", "", 7
       </SCRIPT>
     </FORM>
 </center>
