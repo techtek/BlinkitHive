@@ -296,7 +296,18 @@ s.Close();
 		Set objShell = CreateObject("Shell.Application")
 		objShell.ShellExecute ".\Data\Hive\HiveCommunityTasmota.bat"
       </SCRIPT>
-    </FORM> </div>			
+    </FORM> </div>	
+
+<br>
+
+<div class='left'> <p>Blink on new notifications</p> </div> 
+<div class='right'> <FORM>
+	<input type="image" src=".\Images\start.png" NAME="Buttonnotifications" VALUE="EDIT" alt="Submit" width="auto" height="23" >
+      <SCRIPT FOR="Buttonnotifications" EVENT="onClick" LANGUAGE="VBScript">
+		Set objShell = CreateObject("Shell.Application")
+		objShell.ShellExecute ".\Data\Hive\HiveNotificationsTasmota.bat"
+      </SCRIPT>
+    </FORM> </div>		
 
 	
 <br></br>

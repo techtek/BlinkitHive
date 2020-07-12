@@ -4,7 +4,7 @@
 |__) |___ | | \| |  \ |  |    
   
 ----------------------------------------------------------------------                                                
-Blinkit | Blink your devices on blockchain actions | Version 3.4 
+Blinkit | Blink your devices on blockchain actions | Version 3.5 
 Made by Techtek https://steemit.com/@techtek/ https://hive.blog/@techtek/
 ----------------------------------------------------------------------
 
